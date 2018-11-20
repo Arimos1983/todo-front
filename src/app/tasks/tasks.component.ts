@@ -17,10 +17,6 @@ export class TasksComponent implements OnInit {
   ngOnInit() {
     this.getTasks();
   }
-  // addTask(newTask): void {
-  //   newTask.id = 3;
-  //   this.tasks.push(newTask);
-  // }
   getTasks(): void {
     this.taskService.getTasks()
       .subscribe(tasks => this.tasks = tasks);

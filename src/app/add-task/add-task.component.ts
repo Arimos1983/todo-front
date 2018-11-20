@@ -27,7 +27,6 @@ export class AddTaskComponent implements OnInit {
     this.location.back();
   }
   addTask(task): void {
-    console.log(task)
     this.taskService.addTask(task)
       .subscribe(() => this.goBack());
   }
