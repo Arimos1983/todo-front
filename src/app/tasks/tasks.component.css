@@ -1,0 +1,13 @@
+.tasks {
+  
+    list-style-type: none;
+   
+}
+
+.tasks li{
+    
+    background-color: #EEE;
+    margin: .5em;
+    
+}
+  
