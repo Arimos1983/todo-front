@@ -1,0 +1,7 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="nav-link" [routerLink]="['/']">Home</a>
+    <a *ngIf='authService.isAuthenticated()' class="nav-link" [routerLink]="['tasks']">Tasks</a>
+    <a *ngIf='!authService.isAuthenticated()' class="nav-link" [routerLink]="['login']">Login</a>
+    <a *ngIf='!authService.isAuthenticated()' class="nav-link" [routerLink]="['register']">Register</a>
+    <a *ngIf='authService.isAuthenticated()' class="nav-link" (click)="logout()" >Logout</a>
+  </nav>

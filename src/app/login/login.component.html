@@ -1,0 +1,15 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" class="form-control" [(ngModel)]="auth.email" >
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" name="password" id="password" class="form-control" [(ngModel)]="auth.password" >
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="login(auth)">Log In</button>
+    </div>
+  </form>
+</div>
