@@ -30,8 +30,8 @@ export class TasksService {
     const url = `${this.tasksUrl}/${id}`;
     return this.http.put(url, task);
   }
-  addTask(task): Observable<any>{
-    return this.http.post(this.tasksUrl, task);
+  addTask(task): Observable<Task>{
+    return this.http.post<Task>(this.tasksUrl, task);
   }
   deleteTask(id): Observable<any>{
     const url = `${this.tasksUrl}/${id}`;

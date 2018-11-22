@@ -3,14 +3,17 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" class="form-control" [(ngModel)]="user.name" >
+      <p *ngIf="error.name" class="alert alert-danger" role="alert">{{error.name}}</p>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" name="email" id="email" class="form-control" [(ngModel)]="user.email" >
+      <p *ngIf="error.email" class="alert alert-danger" role="alert">{{error.email}}</p>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="text" name="password" id="password" class="form-control" [(ngModel)]="user.password" >
+      <p *ngIf="error.password" class="alert alert-danger" role="alert">{{error.password}}</p>
     </div>
     <div class="form-group">
       <button class="btn btn-primary" (click)="register(user)">Register</button>

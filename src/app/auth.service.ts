@@ -19,11 +19,11 @@ export class AuthService {
           localStorage.setItem('token', response.access_token)
         }
       })
-  }
+  };
   logout(){
     this.http.post(`${this.authUrl}/logout`, null);
     localStorage.removeItem('token');
-  }
+  };
   register(user){
     return this.http.post<any>(`${this.authUrl}/register`, user)
       .map(response => {
@@ -31,7 +31,7 @@ export class AuthService {
           localStorage.setItem('token', response.access_token)
         }
       })
-  }
+  };
   isAuthenticated(){
     return !!localStorage.getItem("token");
   }

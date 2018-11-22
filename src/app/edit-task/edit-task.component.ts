@@ -13,6 +13,7 @@ import { TasksService } from '../tasks.service';
 export class EditTaskComponent implements OnInit {
 
   @Input() task: Task;
+  error = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +34,12 @@ export class EditTaskComponent implements OnInit {
   }
   save(task): void {
     this.taskService.updateTask(task, task.id)
-      .subscribe(() => this.goBack());
+      .subscribe(
+          () => this.goBack(),
+        error =>{
+          this.error = error.error.errors;
+        }
+      ) 
   }
 
 }

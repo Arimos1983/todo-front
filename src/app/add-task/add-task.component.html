@@ -3,10 +3,12 @@
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" name="title" id="title" [(ngModel)]="task.title" required>
+      <p *ngIf="error.title" class="alert alert-danger" role="alert">{{error.title}}</p>
     </div>
     <div class="form-group">
       <label for="description">description</label>
       <input type="text" class="form-control" name="description" id="description" [(ngModel)]="task.description" required>
+      <p *ngIf="error.description" class="alert alert-danger" role="alert">{{error.description}}</p>
     </div>
     <div class="form-group">
       <label for="priority">priority</label>
@@ -15,6 +17,7 @@
         <option (value)="Med">Med</option>
         <option (value)="High">High</option>
       </select>
+      <p *ngIf="error.priority" class="alert alert-danger" role="alert">{{error.priority}}</p>
     </div>
     <button type="submit" class="btn btn-success" (click)="addTask(task)"  >Add task</button>
   </form>

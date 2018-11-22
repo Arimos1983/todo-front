@@ -11,9 +11,8 @@ import { TasksService } from '../tasks.service';
 })
 export class AddTaskComponent implements OnInit {
 
-  
-
   task = {};
+  error = {};
 
   constructor(
     private taskService: TasksService,
@@ -28,7 +27,11 @@ export class AddTaskComponent implements OnInit {
   }
   addTask(task): void {
     this.taskService.addTask(task)
-      .subscribe(() => this.goBack());
+      .subscribe(
+        () => this.goBack(),
+        error =>
+        this.error = error.error.errors
+        );
   }
 
 }

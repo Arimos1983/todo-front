@@ -3,6 +3,7 @@
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" name="email" id="email" class="form-control" [(ngModel)]="auth.email" >
+      <p *ngIf="error.error" class="alert alert-danger" role="alert">{{error.error}}</p>
     </div>
     <div class="form-group">
       <label for="password">Password</label>

@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   auth: any= {};
+  error = {};
 
   constructor(
     private authService: AuthService,
@@ -24,6 +25,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate(['tasks']);
+        },
+        error => {
+          console.log(error)
+          this.error = error.error;
         }
       )
   }

@@ -1,9 +1,9 @@
 <div class="container">
   <ul class="tasks" *ngIf='tasks'>
     <li *ngFor='let task of tasks'>
-        <span>Id:{{task.id}} {{task.title}}</span><br>
-        <span>{{task.description}}</span><br>
-        <span>Priority: {{task.priority}}</span>
+        <span class="text-justify">Id: {{task.id}} Title: {{task.title}}</span><br>
+        <span class="text-justify">{{task.description}}</span><br>
+        <span class="text-black"> Priority: {{task.priority}}</span><br>
         <a class="btn btn-success" routerLink="/edit/{{task.id}}">Edit</a>
         <button class="btn btn-danger" (click)="deleteTask(task)">Delete</button>
         <div *ngIf="task.done">

@@ -10,7 +10,8 @@ import { User } from '../user'
 })
 export class RegisterComponent implements OnInit {
 
-  user: any = {};
+  user = {};
+  error = {}
 
   constructor(
     private authService: AuthService,
@@ -24,6 +25,9 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate(['tasks']);
+        },
+        error => {
+          this.error = error.error.errors;
         }
       )
   }
